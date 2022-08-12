@@ -7,28 +7,28 @@ import { Usuario } from './usuario.entity'
 export class UsuariosController {
     constructor(private usuariosService: UsuariosService) { }
 
-    @Get() // localhost:3000/usuarios/
+    @Get() 
     getUsuarios() {
         return this.usuariosService.getUsuarios();
     }
 
 
-    @Get(':id') //localhost:3000/usuarios/1
+    @Get(':id') 
     getUsuarioByID(@Param('id') id: number) {
         return this.usuariosService.getUsuarioByID(id);
     }
 
-    @Post() //localhost:3000/usuarios
+    @Post() 
     crearUsuario(@Body() usuario: Usuario) {
         return this.usuariosService.crearUsuario(usuario);
     }
 
-    @Patch(':id') //localhost:3000/usuarios/1
+    @Patch(':id') 
     editarUsuario(@Param('id') id: number, @Body() usuario: Usuario) {
         return this.usuariosService.editarUsuario(id, usuario);
     }
 
-    @Delete(':id') //localhost:3000/usuarios/1
+    @Delete(':id')
     eliminarUsuario(@Param('id') id: number) {
         return this.usuariosService.eliminarUsuario(id);
     }

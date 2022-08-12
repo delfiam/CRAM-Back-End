@@ -1,8 +1,9 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert } from 'typeorm';
+import { hash, compare, genSalt } from 'bcryptjs'
 
 @Entity()
 export class Usuario {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   IdUsuario: number; 
 
   @Column({name: 'Foto', type: 'text'})

@@ -5,7 +5,7 @@ import { JwtAuthGuard } from './jwt-auth.guard';
 import { RegisterAuthDto } from './dto/registrar-auth.dto';
 import { LoginAuthDto } from './dto/login-auth.dto';
 
-@Controller('auth') // localhost:3000/auth
+@Controller('auth') 
 export class AuthController {
     constructor(private readonly authService: AuthService){}
 
@@ -15,7 +15,7 @@ export class AuthController {
         return this.authService.register(usuarioObject)
     }
 
-    @Post('login') // Localhost:3000/auth/login
+    @Post('login') 
     loginUse(@Body() usuarioObject: LoginAuthDto) {
       return this.authService.login(usuarioObject); 
     } 
