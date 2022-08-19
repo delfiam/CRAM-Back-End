@@ -15,10 +15,10 @@ export class Usuario {
   @Column({name: 'Password', type: 'varchar'})
   password: string;
 
-  @Column({name: 'Username'})
+  @Column({name: 'Username', unique: true})
   username: string;
 
-  @Column({name:'Mail'})
+  @Column({name:'Mail', unique: true})
   mail: string;
 
 }

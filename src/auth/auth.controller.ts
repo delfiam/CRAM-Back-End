@@ -4,12 +4,13 @@ import { AuthGuard} from '@nestjs/passport'
 import { JwtAuthGuard } from './jwt-auth.guard';
 import { RegisterAuthDto } from './dto/registrar-auth.dto';
 import { LoginAuthDto } from './dto/login-auth.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('auth') 
+@ApiTags('Auth')
 export class AuthController {
     constructor(private readonly authService: AuthService){}
-
-    @UseGuards(JwtAuthGuard)
+ 
     @Post('register')
     RegisterUser(@Body() usuarioObject: RegisterAuthDto){
         return this.authService.register(usuarioObject)
