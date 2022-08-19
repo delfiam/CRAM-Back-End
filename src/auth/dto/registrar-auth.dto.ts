@@ -16,7 +16,7 @@ export class RegisterAuthDto extends PartialType(LoginAuthDto){
     @Column({name:'Foto', type:'text'})
     foto: string
 
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn({name: 'IdUsuario', type: 'int'})
     IdUsuario: number
     
 } 

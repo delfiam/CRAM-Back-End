@@ -3,7 +3,7 @@ import { hash, compare, genSalt } from 'bcryptjs'
 
 @Entity()
 export class Usuario {
-  @PrimaryGeneratedColumn('increment')
+  @PrimaryGeneratedColumn('increment', {name: 'IdUsuario', type: 'int'})
   IdUsuario: number; 
 
   @Column({name: 'Foto', type: 'text'})
@@ -15,10 +15,10 @@ export class Usuario {
   @Column({name: 'Password', type: 'varchar'})
   password: string;
 
-  @Column({name: 'Username', unique: true})
+  @Column({name: 'Username', unique: true, type: 'varchar'})
   username: string;
 
-  @Column({name:'Mail', unique: true})
+  @Column({name:'Mail', unique: true, type: 'text'})
   mail: string;
 
 }
