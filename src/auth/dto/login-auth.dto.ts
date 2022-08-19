@@ -4,12 +4,12 @@ import { Entity, Column } from 'typeorm';
 @Entity()
 export class LoginAuthDto{
 
-    @Column({name: 'Username'})
+    @Column({name: 'Username', type: 'varchar'})
 
     username: string
     
     @Column({name: 'Password', type: 'varchar'})
-    @MinLength(6)
+    @MinLength(4)
     password: string
 
 
