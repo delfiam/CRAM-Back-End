@@ -20,24 +20,21 @@ import configuration from './config/configuration';
     ConfigModule.forRoot({
       isGlobal: true,
       load: [configuration],
+      envFilePath: '.database.env',
     }),
     LugarModule,
     UsuariosModule,
     ReviewModule,
     AuthModule,
-    TypeOrmModule.forRootAsync({
-      imports: [ConfigModule],
-      useFactory: (configService: ConfigService) => ({
-        type: 'mssql',
-        host: configService.get('DB_HOST'),
-        port: +configService.get('DB_PORT'),
-        username: configService.get('DB_USER'),
-        password: configService.get('DB_PASSWORD'),
-        database: configService.get('DN_NAME'),
-        entities: [],
-        synchronize: true,
-      }),
-      inject: [ConfigService],
+    TypeOrmModule.forRoot({
+      type: 'mssql',
+      host: 'localhost',
+      port: 1434,
+      username: 'alumno',
+      password: 'alumno', 
+      database: 'CRAM',
+      entities: [Usuario, Lugar, Review],
+      synchronize: false,
     })
   ],
 
