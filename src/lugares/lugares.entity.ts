@@ -1,10 +1,10 @@
 import { Entity, Column, PrimaryGeneratedColumn,  } from 'typeorm';
 @Entity()
 export class Lugar {
-  @PrimaryGeneratedColumn()
+  @Column({name: 'IdLugar', type: 'text'})
   IdLugar: string;
 
-  @Column({name : 'nombre', type:'text'})
+  @Column({name : 'nombre', type:'varchar'})
   
   nombre: string;
 

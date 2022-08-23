@@ -8,17 +8,17 @@ export class Review {
   @Column({name: 'Destacar', type: 'varchar'})
   destacar: string; 
 
-  @Column({name: 'Descripcion', type: 'varchar'})
+  @Column({name: 'Descripcion', type: 'text'})
   descripcion: string; 
 
   @Column({name: 'Puntaje', type:'int'})
   puntaje: number;
 
-  @Column({name:'Comentarios', type: 'varchar'})
+  @Column({name:'Comentarios', type: 'text'})
   comentarios: string;
 
   @Column({name:'IdUsuario', type: 'int'})
-  idUsuario: number; // hay que igualar 
+  idUsuario: number; 
 
   @Column ({name: 'IdLugar', type: 'int'})
   idLugar: string ;

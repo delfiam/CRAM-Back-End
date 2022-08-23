@@ -5,6 +5,6 @@ export class Seguido {
   @PrimaryGeneratedColumn('increment')
   IdSeguido: number; 
 
-  @Column({name: 'IdUsuario', type: 'text'})
+  @Column({name: 'IdUsuario', type: 'int'})
   IdUsuario: number;
 }

@@ -9,7 +9,7 @@ export class Usuario {
   @Column({name: 'Foto', type: 'text'})
   foto: string;
 
-  @Column({name: 'Nombre', type: 'text'})
+  @Column({name: 'Nombre', type: 'varchar'})
   nombre: string;
 
   @Column({name: 'Password', type: 'varchar'})
@@ -18,7 +18,7 @@ export class Usuario {
   @Column({name: 'Username', unique: true, type: 'varchar'})
   username: string;
 
-  @Column({name:'Mail', unique: true, type: 'text'})
+  @Column({name:'Mail', unique: true, type: 'varchar'})
   mail: string;
 
 }
