@@ -8,9 +8,11 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 export class RegisterAuthDto extends PartialType(LoginAuthDto){
 
     @Column({name: 'Nombre', type: 'text'})
+    @IsNotEmpty()
     nombre: string
 
     @Column({name:'Mail', type: 'text'})
+    @IsEmail()
     mail: string
 
     @Column({name:'Foto', type:'text'})

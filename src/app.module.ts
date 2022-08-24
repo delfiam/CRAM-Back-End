@@ -18,6 +18,7 @@ import { SeguidoModule } from './seguido/seguido.module';
     LugarModule,
     UsuariosModule,
     ReviewModule,
+    SeguidoModule,
     AuthModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
@@ -28,8 +29,7 @@ import { SeguidoModule } from './seguido/seguido.module';
       database: 'CRAM',
       entities: [Usuario, Lugar, Review],
       synchronize: false,
-    }),
-    SeguidoModule
+    })
   ],
 
 })

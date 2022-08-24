@@ -5,11 +5,14 @@ import { Entity, Column } from 'typeorm';
 export class LoginAuthDto{
 
     @Column({name: 'Username', type: 'varchar', length: 20})
-
+    @IsNotEmpty()
     username: string
     
     @Column({name: 'Password', type: 'varchar', length: 50})
-    @MinLength(4)
+    @IsNotEmpty()
+    @MinLength(4, {
+        message: 'La contraseña debe tener al menos 4 caracteres',
+      })
     password: string
 
 
