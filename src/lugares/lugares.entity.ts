@@ -1,11 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn,  } from 'typeorm';
+import { Entity, Column, PrimaryColumn  } from 'typeorm';
 @Entity()
 export class Lugar {
+  @PrimaryColumn()
   @Column({name: 'IdLugar', type: 'text'})
   IdLugar: string;
 
-  @Column({name : 'nombre', type:'varchar'})
-  
+  @Column({name: 'Nombre', type: 'varchar'})
   nombre: string;
 
   @Column({name: 'Descripcion', type:'text'})

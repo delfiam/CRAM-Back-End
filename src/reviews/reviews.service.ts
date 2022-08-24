@@ -39,9 +39,11 @@ export class ReviewsService {
     async getReviewSeguidos(id: number) {
         //recibe el id de el usuario, ahi hace get de todos los que sigue, y ahi busca todas las reviews que sean de sus seguidos
         let reviews = []
-        let seguidos = await this.seguidosService.getSeguidos(id)
-        for (const seguido of [seguidos]){
+        let seguidos = []
+        seguidos.push(this.seguidosService.getSeguidos(id))
+        for (const seguido of seguidos){
             reviews.push(this.getReviewFromID(seguido.IdSeguido))
         }
+        return reviews
     }
 }
