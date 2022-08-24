@@ -10,6 +10,7 @@ import { Review } from './reviews/Reviews.entity';
 import { ReviewModule } from './reviews/Reviews.module';
 import { AuthModule } from './auth/auth.module';
 import { SeguidoModule } from './seguido/seguido.module';
+import { Seguido } from './seguido/seguido.entity';
 
 @Module({
   providers: [AppService],
@@ -25,9 +26,9 @@ import { SeguidoModule } from './seguido/seguido.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'MyNewPass', 
+      password: 'root', 
       database: 'cram',
-      entities: [Usuario, Lugar, Review],
+      entities: [Usuario, Lugar, Review, Seguido],
       synchronize: false,
     })
   ],
