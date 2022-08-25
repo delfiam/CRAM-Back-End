@@ -1,7 +1,8 @@
-import { Controller, Body, Get, Post, Patch, Delete, Param } from '@nestjs/common';
+import { Controller, Body, Get, Post, Patch, Delete, Param, Query } from '@nestjs/common';
 import { ReviewsService } from './Reviews.service';
 import { Review } from './Reviews.entity';
 import { ApiTags } from '@nestjs/swagger';
+import { filter } from 'rxjs';
 
 @Controller('Reviews')
 @ApiTags('Reviews')
@@ -14,9 +15,23 @@ export class ReviewsController {
     }
 
     @Get(':id') // localhost:3000/Reviews/1
-    getReviewByID(@Param('id') id: number) {
-        return this.ReviewsService.getReviewbyID(id);
+    getReviewByID(@Query() filterQuery) {
+        const reviews = [];
+        const {idUsuario, idLugar, IdReview} = filterQuery
+        if(filterQuery == null){
+            return console.error();
+        }
+        if(idUsuario !== null){
+            this.ReviewsService.getReviewFromID(idUsuario)
+        }
+        if(idLugar !== null){
+            this.ReviewsService.getReviewFromLugar(idLugar)
+        }
+        if(IdReview !== null){
+            this.ReviewsService.getReviewbyID(IdReview)
+        }
     }
+
 
     @Post() // localhost:3000/Reviews
     crearReview(@Body() Reviews: Review) {

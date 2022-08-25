@@ -1,20 +1,14 @@
-import { IsNotEmpty } from 'class-validator';
-import { Entity, Column, PrimaryColumn  } from 'typeorm';
-
+import { Entity, Column, PrimaryGeneratedColumn,  } from 'typeorm';
 @Entity()
-
 export class Lugar {
-
-  @PrimaryColumn()
-  @Column({name: 'IdLugar', type: 'text'})
+  @PrimaryGeneratedColumn()
   IdLugar: string;
 
-  @Column({name: 'Nombre', type: 'varchar'})
-  @IsNotEmpty()
+  @Column({name : 'nombre', type:'text'})
+  
   nombre: string;
 
   @Column({name: 'Descripcion', type:'text'})
   description: string;
 
 }
-

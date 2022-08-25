@@ -22,12 +22,12 @@ import { Seguido } from './seguido/seguido.entity';
     SeguidoModule,
     AuthModule,
     TypeOrmModule.forRoot({
-      type: 'mysql',
+      type: 'mssql',
       host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'root', 
-      database: 'cram',
+      port: 1434,
+      username: 'alumno',
+      password: 'alumno', 
+      database: 'CRAM',
       entities: [Usuario, Lugar, Review, Seguido],
       synchronize: false,
     })

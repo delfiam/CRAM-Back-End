@@ -25,7 +25,7 @@ export class ReviewsService {
         return this.Reviews.findOneBy({idUsuario: id})
     }
 
-    getReviewFromLugar(id: number) : Promise<Review>{
+    getReviewFromLugar(id: string) : Promise<Review>{
         return this.Reviews.findOneBy({idLugar : id})
     }
     crearReview(Review: Review) {

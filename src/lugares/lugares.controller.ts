@@ -14,6 +14,7 @@ export class LugaresController {
     GetLugarById(@Param('id') id: string) {
         return this.lugaresService.getLugarById(id);
     }
+    
 
     @Post() // localhost:3000/Lugares
     CrearLugar(@Body() lugar: Lugar) {
