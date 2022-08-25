@@ -24,6 +24,10 @@ export class ReviewsService {
     getReviewFromID(id : number) : Promise<Review>{
         return this.Reviews.findOneBy({idUsuario: id})
     }
+
+    getReviewFromLugar(id: number) : Promise<Review>{
+        return this.Reviews.findOneBy({idLugar : id})
+    }
     crearReview(Review: Review) {
         return this.Reviews.save(Review);
     }
