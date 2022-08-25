@@ -18,17 +18,18 @@ export class ReviewsController {
     getReviewByID(@Query() filterQuery) {
         const reviews = [];
         const {idUsuario, idLugar, IdReview} = filterQuery
-        if(filterQuery == null){
-            return console.error();
-        }
-        if(idUsuario !== null){
-            this.ReviewsService.getReviewFromID(idUsuario)
-        }
-        if(idLugar !== null){
-            this.ReviewsService.getReviewFromLugar(idLugar)
-        }
-        if(IdReview !== null){
-            this.ReviewsService.getReviewbyID(IdReview)
+        switch (null){
+            case filterQuery:
+                return console.error("null");
+                break;
+            case !idUsuario:
+                return this.ReviewsService.getReviewbyID(idUsuario);
+                break;
+            case !idLugar:
+                return this.ReviewsService.getReviewFromLugar(idLugar);
+                break;
+            case !IdReview:
+                return this.ReviewsService.getReviewbyID(IdReview);
         }
     }
 
