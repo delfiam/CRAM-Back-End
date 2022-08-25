@@ -7,6 +7,8 @@ import { Usuario } from './usuario.entity'
 export class UsuariosController {
     constructor(private usuariosService: UsuariosService) { }
 
+    //cambiar a query params
+
     @Get() 
     getUsuarios() {
         return this.usuariosService.getUsuarios();
