@@ -14,10 +14,13 @@ import { Seguido } from './seguido/seguido.entity';
 import { FiltrosController } from './filtros/filtros.controller';
 import { FiltrosService } from './filtros/filtros.service';
 import { FiltrosModule } from './filtros/filtros.module';
+import { ListaController } from './lista/lista.controller';
+import { ListaModule } from './lista/lista.module';
+import { ListaController } from './lista/lista.controller';
 
 @Module({
   providers: [AppService, FiltrosService],
-  controllers: [AppController, FiltrosController],
+  controllers: [AppController, FiltrosController, ListaController],
   imports: [
     LugarModule,
     UsuariosModule,
@@ -34,7 +37,8 @@ import { FiltrosModule } from './filtros/filtros.module';
       entities: [Usuario, Lugar, Review, Seguido],
       synchronize: false,
     }),
-    FiltrosModule
+    FiltrosModule,
+    ListaModule
   ],
 
 })

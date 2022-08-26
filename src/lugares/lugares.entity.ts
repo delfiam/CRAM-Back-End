@@ -10,7 +10,7 @@ export class Lugar {
   nombre: string;
 
   @Column({name: 'Descripcion', type:'text'})
-  description: string;
+  descripcion: string;
 
   @Column({name: 'Filtros', type:'text'})
   filtros: string;
