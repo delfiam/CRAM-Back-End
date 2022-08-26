@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS `CRAM`.`Lugar` (
   `IdLugar` VARCHAR(200) NOT NULL,
   `Nombre` VARCHAR(50) NOT NULL,
   `Descripcion` TEXT NULL,
+  `Filtros` TEXT NULL,
   PRIMARY KEY (`IdLugar`))
 ENGINE = InnoDB;
 
