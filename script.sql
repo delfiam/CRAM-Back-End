@@ -90,6 +90,7 @@ CREATE TABLE IF NOT EXISTS `CRAM`.`Review` (
   `Puntaje` INT NOT NULL,
   `Titulo` VARCHAR(20) NOT NULL,
   `IdUsuario` INT NOT NULL,
+   `Foto` LONGTEXT NULL,
   PRIMARY KEY (`IdReview`),
   INDEX `fk_Review_Usuario1_idx` (`IdUsuario` ASC) VISIBLE,
   CONSTRAINT `fk_Review_Usuario1`

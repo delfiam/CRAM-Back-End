@@ -30,4 +30,7 @@ export class Review {
   @Column({name: 'Titulo', type: 'varchar'})
   titulo: string;
 
+  @Column({name: 'Foto', type: 'longtext'})
+  foto: string;
+
 }

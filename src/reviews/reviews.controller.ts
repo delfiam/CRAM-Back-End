@@ -17,13 +17,16 @@ export class ReviewsController {
                 return console.error("null");
                 break;
             case !idUsuario:
-                return this.ReviewsService.getReviewbyID(idUsuario);
+                return this.ReviewsService.getReviewFromID(idUsuario);
                 break;
             case !idLugar:
                 return this.ReviewsService.getReviewFromLugar(idLugar);
                 break;
             case !IdReview:
-                return this.ReviewsService.getReviewbyID(IdReview);
+                return this.ReviewsService.getReviewFromLugar(IdReview);
+                break;
+            default:
+                return this.ReviewsService.getReview();
         }
     }
 
