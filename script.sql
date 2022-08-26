@@ -33,9 +33,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `CRAM`.`Usuario` (
   `IdUsuario` INT NOT NULL AUTO_INCREMENT,
-  `Nombre` VARCHAR(45) NOT NULL,
+  `Nombre` LONGTEXT NOT NULL,
   `Foto` TEXT NULL,
-  `Password` VARCHAR(45) NOT NULL,
+  `Password` LONGTEXT NOT NULL,
   `Username` VARCHAR(25) NOT NULL,
   `Mail` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`IdUsuario`),
