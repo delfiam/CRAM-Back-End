@@ -13,7 +13,7 @@ export class Usuario {
   @Column({name: 'Nombre', type: 'varchar'})
   nombre: string;
 
-  @Column({name: 'Password', type: 'varchar'})
+  @Column({name: 'Password', type: 'longtext'})
   @IsNotEmpty()
   password: string;
 
