@@ -31,24 +31,24 @@ export class AuthService {
 
     if (!validarUsuario) throw new HttpException('user_not_found', 404)  // si no existe se da null, despues vamos a poner los http exception
 
-    /*const validarPassword = await compare(password, validarUsuario.password)*/ // esto va cuando ya las contras de la bdd esten hasheadas
+    const validarPassword = await compare(password, validarUsuario.password) // esto va cuando ya las contras de la bdd esten hasheadas
 
-    if (password == validarUsuario.password) {
-      const payload = { username: validarUsuario.username, sub: validarUsuario.IdUsuario };
-      const access_token = this.jwtService.sign(payload) // genera el token 
-
-      const data = {
-        usuario: validarUsuario,
-        access_token,
+      if (validarPassword) {
+        const payload = { username: validarUsuario.username, sub: validarUsuario.IdUsuario };
+        const access_token = this.jwtService.sign(payload) // genera el token 
+  
+        const data = {
+          usuario: validarUsuario,
+          access_token,
+        }
+  
+        return data;
       }
-
-      return data;
+      else {
+        throw new HttpException('Incorrect_Password', 404)  // si no existe se da null, despues vamos a poner los http exception
+  
+      }
     }
-    else {
-      throw new HttpException('Incorrect_Password', 404)  // si no existe se da null, despues vamos a poner los http exception
-
-    }
-  }
 
 
 

@@ -1,3 +1,4 @@
+import { IsNotEmpty } from 'class-validator';
 import { Entity, Column, PrimaryGeneratedColumn,  } from 'typeorm';
 @Entity()
 export class Lugar {
@@ -5,8 +6,9 @@ export class Lugar {
   IdLugar: string;
 
   @Column({name : 'nombre', type:'text'})
-  
+  @IsNotEmpty()
   nombre: string;
+
 
   @Column({name: 'Descripcion', type:'text'})
   description: string;

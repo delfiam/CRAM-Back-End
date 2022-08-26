@@ -28,7 +28,6 @@ export class Review {
   idLugar: string ;
   
   @Column({name: 'Titulo', type: 'varchar'})
-  @IsNotEmpty()
   titulo: string;
 
 }
