@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS `CRAM`.`Lugar` (
   `Nombre` VARCHAR(50) NOT NULL,
   `Descripcion` TEXT NULL,
   `Filtros` TEXT NULL,
+  `AgregadoALista` TINYINT NOT NULL,
   PRIMARY KEY (`IdLugar`))
 ENGINE = InnoDB;
 
@@ -91,6 +92,7 @@ CREATE TABLE IF NOT EXISTS `CRAM`.`Review` (
   `Titulo` VARCHAR(20) NOT NULL,
   `IdUsuario` INT NOT NULL,
    `Foto` LONGTEXT NULL,
+ 
   PRIMARY KEY (`IdReview`),
   INDEX `fk_Review_Usuario1_idx` (`IdUsuario` ASC) VISIBLE,
   CONSTRAINT `fk_Review_Usuario1`

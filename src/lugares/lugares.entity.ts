@@ -16,4 +16,7 @@ export class Lugar {
   @Column({name: 'Filtros', type:'text'})
   filtros: string;
 
+  @Column({name: 'AgregadoALista', type: 'tinytext'})
+    agregadoLista: boolean;
+
 }
