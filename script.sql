@@ -83,7 +83,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `CRAM`.`Review` (
   `IdReview` INT NOT NULL AUTO_INCREMENT,
-  `Destacar` VARCHAR(80) NOT NULL,
+  `Destacar` VARCHAR(80) NULL,
   `Descripcion` TEXT NOT NULL,
   `Comentarios` TEXT NULL,
   `IdLugar` VARCHAR(200) NOT NULL,

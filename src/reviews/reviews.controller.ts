@@ -10,13 +10,7 @@ export class ReviewsController {
     constructor(private ReviewsService: ReviewsService) { }
 
     @Get() // localhost:3000/Reviews/
-    getReviews() {
-        return this.ReviewsService.getReview();
-    }
-
-    @Get(':id') // localhost:3000/Reviews/1
-    getReviewByID(@Query() filterQuery) {
-        const reviews = [];
+    getReviews(@Query() filterQuery) {
         const {idUsuario, idLugar, IdReview} = filterQuery
         switch (null){
             case filterQuery:
@@ -31,6 +25,12 @@ export class ReviewsController {
             case !IdReview:
                 return this.ReviewsService.getReviewbyID(IdReview);
         }
+    }
+
+    @Get(':id') // localhost:3000/Reviews/1
+    getReviewByID(@Param('id') id: number) {
+        return this.ReviewsService.getReviewbyID(id);
+      
     }
 
 

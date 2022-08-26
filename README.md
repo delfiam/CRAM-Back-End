@@ -11,7 +11,7 @@ CONECTAR MYSQL
 
 Creas el user en el command line de sql, hay que entrar con el usuario que creaste al descargar MSSQL (en ort la contraseña es 12345)
 
-CREATE USER 'admin'@'localhost'IDENTIFIED WITH mysql_native_password BY 'password';}
+CREATE USER 'admin'@'localhost'IDENTIFIED WITH mysql_native_password BY 'password';
 
 GRANT ALL PRIVILEGES ON CRAM.* TO 'admin'@'localhost';
 
