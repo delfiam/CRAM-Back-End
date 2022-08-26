@@ -87,9 +87,9 @@ CREATE TABLE IF NOT EXISTS `CRAM`.`Review` (
   `Destacar` VARCHAR(80) NULL,
   `Descripcion` TEXT NOT NULL,
   `Comentarios` TEXT NULL,
-  `IdLugar` VARCHAR(200) NOT NULL,
+  `IdLugar` VARCHAR(255) NOT NULL,
   `Puntaje` INT NOT NULL,
-  `Titulo` VARCHAR(20) NOT NULL,
+  `Titulo` VARCHAR(200) NOT NULL,
   `IdUsuario` INT NOT NULL,
    `Foto` LONGTEXT NULL,
  
@@ -107,17 +107,24 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `CRAM`.`filtros` (
   `idFiltros` int NOT NULL AUTO_INCREMENT,
-  `Nombre` text,
+  `Nombre` text NOT NULL,
+  `IdLugar` VARCHAR(255) NOT NULL,
+  INDEX `fk_filtros_Lugar1_idx` (`IdLugar` ASC) VISIBLE,
   PRIMARY KEY (`idFiltros`),
-  UNIQUE KEY `idFiltros_UNIQUE` (`idFiltros`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  UNIQUE KEY `idFiltros_UNIQUE` (`idFiltros`),
+    CONSTRAINT `fk_filtros_Lugar1`
+    FOREIGN KEY (`IdLugar`)
+    REFERENCES `CRAM`.`Lugar` (`IdLugar`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- -----------------------------------------------------
 -- Table `CRAM`.`LugaresXLista`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `CRAM`.`LugaresXLista` (
   `IdLista` INT NOT NULL,
-  `IdLugar` VARCHAR(200) NOT NULL,
+  `IdLugar` VARCHAR(255) NOT NULL,
   INDEX `fk_LugaresXLista_Lista1_idx` (`IdLista` ASC) VISIBLE,
   INDEX `fk_LugaresXLista_Lugar1_idx` (`IdLugar` ASC) VISIBLE,
   PRIMARY KEY (`IdLista`),

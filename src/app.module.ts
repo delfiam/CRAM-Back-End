@@ -11,10 +11,13 @@ import { ReviewModule } from './reviews/Reviews.module';
 import { AuthModule } from './auth/auth.module';
 import { SeguidoModule } from './seguido/seguido.module';
 import { Seguido } from './seguido/seguido.entity';
+import { FiltrosController } from './filtros/filtros.controller';
+import { FiltrosService } from './filtros/filtros.service';
+import { FiltrosModule } from './filtros/filtros.module';
 
 @Module({
-  providers: [AppService],
-  controllers: [AppController],
+  providers: [AppService, FiltrosService],
+  controllers: [AppController, FiltrosController],
   imports: [
     LugarModule,
     UsuariosModule,
@@ -30,7 +33,8 @@ import { Seguido } from './seguido/seguido.entity';
       database: 'CRAM',
       entities: [Usuario, Lugar, Review, Seguido],
       synchronize: false,
-    })
+    }),
+    FiltrosModule
   ],
 
 })

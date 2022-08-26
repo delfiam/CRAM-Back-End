@@ -9,7 +9,6 @@ export class Lugar {
   @IsNotEmpty()
   nombre: string;
 
-
   @Column({name: 'Descripcion', type:'text'})
   description: string;
 
