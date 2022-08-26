@@ -15,7 +15,7 @@ export class FiltrosService {
         return this.filtros.find();
     }
 
-    getFiltrosById(id: number): Promise<Filtros> {
+    getFiltroByID(id: number): Promise<Filtros> {
         return this.filtros.findOneBy({IdFiltros: id});
     }
 
