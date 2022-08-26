@@ -11,4 +11,7 @@ export class Lugar {
   @Column({name: 'Descripcion', type:'text'})
   description: string;
 
+  @Column({name: 'Filtros', type:'text'})
+  filtros: string;
+
 }
