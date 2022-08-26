@@ -25,7 +25,7 @@ import { Seguido } from './seguido/seguido.entity';
       type: 'mysql',
       host: 'localhost',
       port: 3306,
-      username: 'delfi',
+      username: 'admin',
       password: 'password', 
       database: 'CRAM',
       entities: [Usuario, Lugar, Review, Seguido],
