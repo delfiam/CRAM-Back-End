@@ -21,8 +21,8 @@ USE `CRAM` ;
 -- Table `CRAM`.`Lugar`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `CRAM`.`Lugar` (
-  `IdLugar` VARCHAR(200) NOT NULL,
-  `Nombre` VARCHAR(50) NOT NULL,
+  `IdLugar` VARCHAR(255) NOT NULL,
+  `Nombre` TEXT NOT NULL,
   `Descripcion` TEXT NULL,
   `Filtros` TEXT NULL,
   `AgregadoALista` TINYINT NOT NULL,
@@ -102,6 +102,15 @@ CREATE TABLE IF NOT EXISTS `CRAM`.`Review` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `CRAM`.`Filtros`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `CRAM`.`filtros` (
+  `idFiltros` int NOT NULL AUTO_INCREMENT,
+  `Nombre` text,
+  PRIMARY KEY (`idFiltros`),
+  UNIQUE KEY `idFiltros_UNIQUE` (`idFiltros`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- -----------------------------------------------------
 -- Table `CRAM`.`LugaresXLista`

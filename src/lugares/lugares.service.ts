@@ -18,6 +18,7 @@ export class LugaresService {
     getLugarById(id: string): Promise<Lugar> {
         return this.lugares.findOneBy({ IdLugar: id });
     }
+    
 
     async eliminarLugar(id: string): Promise<void> {
         await this.lugares.delete({ IdLugar: id });
