@@ -1,4 +1,5 @@
-import { Controller, Body, Get, Post, Patch, Delete, Param } from '@nestjs/common';
+import { Controller, Body, Get, Post, Patch, Delete, Param, Query } from '@nestjs/common';
+import { ApiQuery } from '@nestjs/swagger';
 import { LugaresService } from './lugares.service';
 import {Lugar} from './lugares.entity'
 @Controller('lugares')
@@ -6,7 +7,14 @@ export class LugaresController {
     constructor(private lugaresService: LugaresService) { }
 
     @Get() // localhost:3000/Lugares
-    GetLugares() {
+    @ApiQuery({name: 'filtros', required: false, type: String})
+    @ApiQuery({name: 'id_user', required: false, type: String})
+
+    
+    GetLugares( 
+        @Query('filtros') Filtro: string,
+        @Query('id_user') IdUsuario: number,
+    ) {
         return this.lugaresService.getLugares();
     }
 

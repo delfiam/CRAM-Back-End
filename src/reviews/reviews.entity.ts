@@ -22,10 +22,10 @@ export class Review {
   comentarios: string;
 
   @Column({name:'IdUsuario', type: 'int'})
-  idUsuario: number; 
+  IdUsuario: number; 
 
   @Column ({name: 'IdLugar', type: 'int'})
-  idLugar: string ;
+  IdLugar: string ;
   
   @Column({name: 'Titulo', type: 'varchar'})
   titulo: string;

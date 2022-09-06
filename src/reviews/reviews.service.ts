@@ -22,11 +22,11 @@ export class ReviewsService {
     }
 
     getReviewFromID(id : number) : Promise<Review>{
-        return this.Reviews.findOneBy({idUsuario: id})
+        return this.Reviews.findOneBy({IdUsuario: id})
     }
 
     getReviewFromLugar(id: string) : Promise<Review>{
-        return this.Reviews.findOneBy({idLugar : id})
+        return this.Reviews.findOneBy({IdLugar : id})
     }
     crearReview(Review: Review) {
         return this.Reviews.save(Review);

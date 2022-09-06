@@ -11,16 +11,10 @@ import { ReviewModule } from './reviews/Reviews.module';
 import { AuthModule } from './auth/auth.module';
 import { SeguidoModule } from './seguido/seguido.module';
 import { Seguido } from './seguido/seguido.entity';
-import { FiltrosController } from './filtros/filtros.controller';
-import { FiltrosService } from './filtros/filtros.service';
-import { FiltrosModule } from './filtros/filtros.module';
-import { ListaController } from './lista/lista.controller';
-import { ListaModule } from './lista/lista.module';
-import { ListaController } from './lista/lista.controller';
 
 @Module({
-  providers: [AppService, FiltrosService],
-  controllers: [AppController, FiltrosController, ListaController],
+  providers: [AppService],
+  controllers: [AppController],
   imports: [
     LugarModule,
     UsuariosModule,
@@ -37,8 +31,6 @@ import { ListaController } from './lista/lista.controller';
       entities: [Usuario, Lugar, Review, Seguido],
       synchronize: false,
     }),
-    FiltrosModule,
-    ListaModule
   ],
 
 })
