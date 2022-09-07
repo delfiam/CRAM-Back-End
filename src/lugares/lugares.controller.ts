@@ -8,14 +8,18 @@ export class LugaresController {
 
     @Get() // localhost:3000/Lugares
     @ApiQuery({name: 'filtros', required: false, type: String})
-    @ApiQuery({name: 'id_user', required: false, type: String})
 
     
     GetLugares( 
         @Query('filtros') Filtro: string,
-        @Query('id_user') IdUsuario: number,
     ) {
-        return this.lugaresService.getLugares();
+        if (Filtro !== null){
+            return this.lugaresService.getLugarFiltro(Filtro)
+        }
+        else{
+            return this.lugaresService.getLugares()
+        }
+        
     }
 
     @Get(':id') // localhost:3000/Lugares/1

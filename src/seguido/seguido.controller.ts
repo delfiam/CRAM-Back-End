@@ -12,7 +12,7 @@ export class SeguidoController {
         return this.seguidosService.getSeguidos(id);
     } 
 
-    @Get(':id') 
+    @Get('/seguidores/:id') 
     getSeguidores(@Param('id') id: number) {
         return this.seguidosService.getSeguidores(id);
     }
@@ -23,9 +23,9 @@ export class SeguidoController {
     }
 
 
-    @Delete(':id')
-    dejarDeSeguir(@Param('id') id: number) {
-        return this.seguidosService.dejarDeSeguir(id);
+    @Delete()
+    dejarDeSeguir(@Body() seguido: Seguido) {
+        return this.seguidosService.dejarDeSeguir(seguido);
     }
 
 

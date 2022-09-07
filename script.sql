@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS `CRAM`.`Lugar` (
   `Descripcion` TEXT NULL,
   `Filtros` TEXT NULL,
   `AgregadoALista` TINYINT NOT NULL,
+  `Foto` LONGTEXT NULL,
   PRIMARY KEY (`IdLugar`))
 ENGINE = InnoDB;
 
@@ -67,7 +68,7 @@ ENGINE = InnoDB;
 -- Table `CRAM`.`Seguido`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `CRAM`.`Seguido` (
-  `idSeguido` INT NOT NULL AUTO_INCREMENT,
+  `idSeguido` INT NOT NULL ,
   `IdUsuario` INT NOT NULL,
   PRIMARY KEY (`idSeguido`),
   INDEX `fk_Seguido_Usuario1_idx` (`IdUsuario` ASC) VISIBLE,

@@ -19,7 +19,7 @@ export class AuthService {
     const { password, nombre, mail, username, foto } = user; // aca entra la contraseña con el texto plano que ingresa el usuario
     const salt = await genSalt();
     const key = await hash(password, salt)  // aca se encripta la contraseña
-    user_logged = { IdUsuario: 50, username: username, nombre: nombre, mail: mail, password: key, foto: foto }
+    user_logged = { IdUsuario: null, username: username, nombre: nombre, mail: mail, password: key, foto: foto }
     this.usuariosService.crearUsuario(user_logged) // esto guarda en la bdd elnuevo usuario con la contraseña encryptada
   }
 

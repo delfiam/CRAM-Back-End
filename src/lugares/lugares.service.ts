@@ -18,6 +18,10 @@ export class LugaresService {
     getLugarById(id: string): Promise<Lugar> {
         return this.lugares.findOneBy({ IdLugar: id });
     }
+
+    getLugarFiltro(filtro: string): Promise <Lugar[]>{
+        return this.lugares.findBy({filtros: filtro})
+    }
     
 
     async eliminarLugar(id: string): Promise<void> {

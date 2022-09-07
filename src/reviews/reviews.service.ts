@@ -21,12 +21,12 @@ export class ReviewsService {
         return this.Reviews.findOneBy({ IdReview: id });
     }
 
-    getReviewFromID(id : number) : Promise<Review>{
-        return this.Reviews.findOneBy({IdUsuario: id})
+    getReviewFromID(id : number) : Promise<Review[]>{
+        return this.Reviews.findBy({IdUsuario: id})
     }
 
-    getReviewFromLugar(id: string) : Promise<Review>{
-        return this.Reviews.findOneBy({IdLugar : id})
+    getReviewFromLugar(id: string) : Promise<Review[]>{
+        return this.Reviews.findBy({IdLugar : id})
     }
     crearReview(Review: Review) {
         return this.Reviews.save(Review);
@@ -40,14 +40,4 @@ export class ReviewsService {
         await this.Reviews.delete(id);
     }
 
-    async getReviewSeguidos(id: number) {
-        //recibe el id de el usuario, ahi hace get de todos los que sigue, y ahi busca todas las reviews que sean de sus seguidos
-        let reviews = []
-        let seguidos = []
-        seguidos.push(this.seguidosService.getSeguidos(id))
-        for (const seguido of seguidos){
-            reviews.push(this.getReviewFromID(seguido.IdSeguido))
-        }
-        return reviews
-    }
 }

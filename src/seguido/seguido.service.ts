@@ -12,20 +12,20 @@ export class SeguidoService {
     ) { }
 
 
-    getSeguidores(id: number): Promise<Seguido> {
-        return this.seguidos.findOneBy( {IdSeguido: id});
+    getSeguidores(id: number): Promise<Seguido[]> {
+        return this.seguidos.findBy( {IdSeguido: id});
     }
 
-    getSeguidos(id: number): Promise<Seguido> {
-        return this.seguidos.findOneBy( {IdUsuario: id});
+    getSeguidos(id: number): Promise<Seguido[]> {
+        return this.seguidos.findBy( {IdUsuario: id});
     }
 
     seguir(seguido: Seguido) {
         return this.seguidos.save(seguido);
     }
 
-    async dejarDeSeguir(id: number): Promise<void>  {
-        await this.seguidos.delete({IdSeguido: id});
+    async dejarDeSeguir(seguido: Seguido): Promise<void>  {
+        await this.seguidos.delete({IdUsuario: seguido.IdUsuario ,IdSeguido: seguido.IdSeguido});
     } 
 
 }
