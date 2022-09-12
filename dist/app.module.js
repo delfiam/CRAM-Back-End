@@ -15,8 +15,8 @@ const lugares_module_1 = require("./lugares/lugares.module");
 const usuarios_module_1 = require("./usuarios/usuarios.module");
 const usuario_entity_1 = require("./usuarios/usuario.entity");
 const lugares_entity_1 = require("./lugares/lugares.entity");
-const Reviews_entity_1 = require("./reviews/Reviews.entity");
-const Reviews_module_1 = require("./reviews/Reviews.module");
+const reviews_entity_1 = require("./reviews/reviews.entity");
+const reviews_module_1 = require("./reviews/reviews.module");
 const auth_module_1 = require("./auth/auth.module");
 const seguido_module_1 = require("./seguido/seguido.module");
 const seguido_entity_1 = require("./seguido/seguido.entity");
@@ -29,7 +29,7 @@ AppModule = __decorate([
         imports: [
             lugares_module_1.LugarModule,
             usuarios_module_1.UsuariosModule,
-            Reviews_module_1.ReviewModule,
+            reviews_module_1.ReviewModule,
             seguido_module_1.SeguidoModule,
             auth_module_1.AuthModule,
             typeorm_1.TypeOrmModule.forRoot({
@@ -39,7 +39,7 @@ AppModule = __decorate([
                 username: 'user',
                 password: 'password',
                 database: 'cram',
-                entities: [usuario_entity_1.Usuario, lugares_entity_1.Lugar, Reviews_entity_1.Review, seguido_entity_1.Seguido],
+                entities: [usuario_entity_1.Usuario, lugares_entity_1.Lugar, reviews_entity_1.Review, seguido_entity_1.Seguido],
                 synchronize: false,
             }),
         ],

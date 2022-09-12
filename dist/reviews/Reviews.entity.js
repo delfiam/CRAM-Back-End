@@ -55,4 +55,4 @@ Review = __decorate([
     (0, typeorm_1.Entity)()
 ], Review);
 exports.Review = Review;
-//# sourceMappingURL=Reviews.entity.js.map
+//# sourceMappingURL=reviews.entity.js.map

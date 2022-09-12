@@ -8,19 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReviewModule = void 0;
 const common_1 = require("@nestjs/common");
-const Reviews_service_1 = require("./Reviews.service");
+const reviews_service_1 = require("./reviews.service");
 const typeorm_1 = require("@nestjs/typeorm");
-const Reviews_controller_1 = require("./Reviews.controller");
-const Reviews_entity_1 = require("./Reviews.entity");
+const reviews_controller_1 = require("./reviews.controller");
+const reviews_entity_1 = require("./reviews.entity");
 const seguido_module_1 = require("../seguido/seguido.module");
 let ReviewModule = class ReviewModule {
 };
 ReviewModule = __decorate([
     (0, common_1.Module)({
-        imports: [seguido_module_1.SeguidoModule, typeorm_1.TypeOrmModule.forFeature([Reviews_entity_1.Review])],
-        providers: [Reviews_service_1.ReviewsService],
-        controllers: [Reviews_controller_1.ReviewsController],
+        imports: [seguido_module_1.SeguidoModule, typeorm_1.TypeOrmModule.forFeature([reviews_entity_1.Review])],
+        providers: [reviews_service_1.ReviewsService],
+        controllers: [reviews_controller_1.ReviewsController],
     })
 ], ReviewModule);
 exports.ReviewModule = ReviewModule;
-//# sourceMappingURL=Reviews.module.js.map
+//# sourceMappingURL=reviews.module.js.map

@@ -14,7 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReviewsService = void 0;
 const common_1 = require("@nestjs/common");
-const Reviews_entity_1 = require("./Reviews.entity");
+const reviews_entity_1 = require("./reviews.entity");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const seguido_service_1 = require("../seguido/seguido.service");
@@ -47,9 +47,9 @@ let ReviewsService = class ReviewsService {
 };
 ReviewsService = __decorate([
     (0, common_1.Injectable)(),
-    __param(0, (0, typeorm_1.InjectRepository)(Reviews_entity_1.Review)),
+    __param(0, (0, typeorm_1.InjectRepository)(reviews_entity_1.Review)),
     __metadata("design:paramtypes", [typeorm_2.Repository,
         seguido_service_1.SeguidoService])
 ], ReviewsService);
 exports.ReviewsService = ReviewsService;
-//# sourceMappingURL=Reviews.service.js.map
+//# sourceMappingURL=reviews.service.js.map

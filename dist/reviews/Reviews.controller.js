@@ -14,8 +14,8 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReviewsController = void 0;
 const common_1 = require("@nestjs/common");
-const Reviews_service_1 = require("./Reviews.service");
-const Reviews_entity_1 = require("./Reviews.entity");
+const reviews_service_1 = require("./reviews.service");
+const reviews_entity_1 = require("./reviews.entity");
 const swagger_1 = require("@nestjs/swagger");
 let ReviewsController = class ReviewsController {
     constructor(ReviewsService) {
@@ -71,7 +71,7 @@ __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Reviews_entity_1.Review]),
+    __metadata("design:paramtypes", [reviews_entity_1.Review]),
     __metadata("design:returntype", void 0)
 ], ReviewsController.prototype, "crearReview", null);
 __decorate([
@@ -79,7 +79,7 @@ __decorate([
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, Reviews_entity_1.Review]),
+    __metadata("design:paramtypes", [Number, reviews_entity_1.Review]),
     __metadata("design:returntype", void 0)
 ], ReviewsController.prototype, "editarReview", null);
 __decorate([
@@ -92,7 +92,7 @@ __decorate([
 ReviewsController = __decorate([
     (0, common_1.Controller)('Reviews'),
     (0, swagger_1.ApiTags)('Reviews'),
-    __metadata("design:paramtypes", [Reviews_service_1.ReviewsService])
+    __metadata("design:paramtypes", [reviews_service_1.ReviewsService])
 ], ReviewsController);
 exports.ReviewsController = ReviewsController;
-//# sourceMappingURL=Reviews.controller.js.map
+//# sourceMappingURL=reviews.controller.js.map
