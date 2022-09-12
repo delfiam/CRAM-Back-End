@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Review } from './Reviews.entity';
+import { Review } from './reviews.entity';
 import { InjectRepository } from '@nestjs/typeorm'
 import { Repository } from 'typeorm';
 import { SeguidoService } from 'src/seguido/seguido.service';

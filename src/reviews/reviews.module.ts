@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import {ReviewsService} from './Reviews.service';
+import {ReviewsService} from './reviews.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ReviewsController } from './Reviews.controller';
-import { Review } from './Reviews.entity';
+import { ReviewsController } from './reviews.controller';
+import { Review } from './reviews.entity';
 import { SeguidoModule } from 'src/seguido/seguido.module';
 
 

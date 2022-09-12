@@ -1,6 +1,6 @@
 import { Controller, Body, Get, Post, Patch, Delete, Param, Query } from '@nestjs/common';
-import { ReviewsService } from './Reviews.service';
-import { Review } from './Reviews.entity';
+import { ReviewsService } from './reviews.service';
+import { Review } from './reviews.entity';
 import { ApiQuery, ApiTags } from '@nestjs/swagger';
 import { filter } from 'rxjs';
 

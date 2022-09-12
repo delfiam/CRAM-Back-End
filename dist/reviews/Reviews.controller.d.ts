@@ -1,5 +1,5 @@
-import { ReviewsService } from './Reviews.service';
-import { Review } from './Reviews.entity';
+import { ReviewsService } from './reviews.service';
+import { Review } from './reviews.entity';
 export declare class ReviewsController {
     private ReviewsService;
     constructor(ReviewsService: ReviewsService);
