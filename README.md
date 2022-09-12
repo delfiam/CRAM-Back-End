@@ -9,6 +9,8 @@ api test
 
 CONECTAR MYSQL
 
+Reinstalar MYSQL por las dudas, después en MYSQL Installer poner reconfigure en MYSQL Server, config type Developmental Computer ---> Next ---> Next ---> root pass en Ort: 12345 ---> Next---> ![image](https://user-images.githubusercontent.com/89984382/189644429-f8087c8c-c902-4cb8-9f1d-32e89e107930.png)
+
 Creas el user en el command line de sql, hay que entrar con el usuario que creaste al descargar MSSQL (en ort la contraseña es 12345)
 
 CREATE USER 'admin'@'localhost'IDENTIFIED WITH mysql_native_password BY 'password';
