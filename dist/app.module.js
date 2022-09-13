@@ -20,6 +20,7 @@ const reviews_module_1 = require("./reviews/reviews.module");
 const auth_module_1 = require("./auth/auth.module");
 const seguido_module_1 = require("./seguido/seguido.module");
 const seguido_entity_1 = require("./seguido/seguido.entity");
+const fs_1 = require("fs");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -34,13 +35,14 @@ AppModule = __decorate([
             auth_module_1.AuthModule,
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'mysql',
-                host: 'localhost',
+                host: 'cram.mysql.database.azure.com',
                 port: 3306,
-                username: 'user',
-                password: 'password',
+                username: 'cramDB',
+                password: 'SofDelf7#',
                 database: 'cram',
                 entities: [usuario_entity_1.Usuario, lugares_entity_1.Lugar, reviews_entity_1.Review, seguido_entity_1.Seguido],
                 synchronize: false,
+                ssl: { ca: (0, fs_1.readFileSync)('DigiCertGlobalRootG2.crt.pem') }
             }),
         ],
     })

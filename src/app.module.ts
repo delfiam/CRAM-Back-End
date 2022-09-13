@@ -11,6 +11,8 @@ import { ReviewModule } from './reviews/reviews.module';
 import { AuthModule } from './auth/auth.module';
 import { SeguidoModule } from './seguido/seguido.module';
 import { Seguido } from './seguido/seguido.entity';
+import { readFileSync } from 'fs';
+
 
 @Module({
   providers: [AppService],
@@ -23,13 +25,14 @@ import { Seguido } from './seguido/seguido.entity';
     AuthModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: 'cram.mysql.database.azure.com',
       port: 3306,
-      username: 'user',
-      password: 'password', 
+      username: 'cramDB',
+      password: 'SofDelf7#', 
       database: 'cram',
       entities: [Usuario, Lugar, Review, Seguido],
       synchronize: false,
+      ssl:{ca: readFileSync('DigiCertGlobalRootG2.crt.pem')}
     }),
   ],
 
