@@ -42,7 +42,10 @@ AppModule = __decorate([
                 database: 'cram',
                 entities: [usuario_entity_1.Usuario, lugares_entity_1.Lugar, reviews_entity_1.Review, seguido_entity_1.Seguido],
                 synchronize: false,
-                ssl: { ca: (0, fs_1.readFileSync)('DigiCertGlobalRootG2.crt.pem') }
+                ssl: {
+                    rejectUnauthorized: false,
+                    ca: (0, fs_1.readFileSync)('DigiCertGlobalRootG2.crt.pem').toString()
+                }
             }),
         ],
     })

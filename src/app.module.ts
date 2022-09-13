@@ -32,7 +32,10 @@ import { readFileSync } from 'fs';
       database: 'cram',
       entities: [Usuario, Lugar, Review, Seguido],
       synchronize: false,
-      ssl:{ca: readFileSync('DigiCertGlobalRootG2.crt.pem')}
+      ssl:{
+        rejectUnauthorized: false,
+        ca: readFileSync('DigiCertGlobalRootG2.crt.pem').toString()
+      }
     }),
   ],
 
