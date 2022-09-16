@@ -11,12 +11,20 @@ import { ReviewModule } from './reviews/reviews.module';
 import { AuthModule } from './auth/auth.module';
 import { SeguidoModule } from './seguido/seguido.module';
 import { Seguido } from './seguido/seguido.entity';
+import { LugaresService } from './lugares/lugares.service';
+import { LugaresController } from './lugares/lugares.controller';
+import { UsuariosService } from './usuarios/usuarios.service';
+import { UsuariosController } from './usuarios/usuarios.controller';
+import { SeguidoController } from './seguido/seguido.controller';
+import { SeguidoService } from './seguido/seguido.service';
+import { ReviewsService } from './reviews/reviews.service';
+import { ReviewsController } from './reviews/reviews.controller';
 import { readFileSync } from 'fs';
 
 
 @Module({
-  providers: [AppService],
-  controllers: [AppController],
+  providers: [LugaresService, UsuariosService, SeguidoService, ReviewsService],
+  controllers: [LugaresController, UsuariosController, SeguidoController, ReviewsController],
   imports: [
     LugarModule,
     UsuariosModule,
