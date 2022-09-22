@@ -2,7 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Seguido {
-  @PrimaryGeneratedColumn('increment')
+  @PrimaryGeneratedColumn()
   IdSeguido: number; 
 
   @Column({name: 'IdUsuario', type: 'int'})
