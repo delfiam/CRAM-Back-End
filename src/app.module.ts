@@ -25,10 +25,10 @@ import { readFileSync } from 'fs';
     AuthModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: 'crambd.mysql.database.azure.com',
       port: 3306,
-      username: 'admin',
-      password: 'password', 
+      username: 'cramdb',
+      password: 'SofDelf7#', 
       database: 'cram',
       entities: [Usuario, Lugar, Review, Seguido],
       synchronize: false,

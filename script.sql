@@ -84,6 +84,10 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `CRAM`.`Review`
 -- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Table `CRAM`.`Review`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `CRAM`.`Review` (
   `IdReview` INT NOT NULL AUTO_INCREMENT,
   `Destacar` VARCHAR(80) NULL,
