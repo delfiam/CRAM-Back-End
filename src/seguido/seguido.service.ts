@@ -3,7 +3,7 @@ import { Seguido } from './seguido.entity';
 import { InjectRepository } from '@nestjs/typeorm'
 import { Repository } from 'typeorm';
 
-
+// 
 @Injectable()
 export class SeguidoService {
     constructor(
