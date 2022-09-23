@@ -14,7 +14,7 @@ const typeorm_1 = require("typeorm");
 let Seguido = class Seguido {
 };
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)('increment'),
+    (0, typeorm_1.PrimaryColumn)({ primary: false }),
     __metadata("design:type", Number)
 ], Seguido.prototype, "IdSeguido", void 0);
 __decorate([

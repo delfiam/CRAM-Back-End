@@ -35,10 +35,10 @@ AppModule = __decorate([
             auth_module_1.AuthModule,
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'mysql',
-                host: 'crambdd.mysql.database.azure.com',
+                host: 'localhost',
                 port: 3306,
-                username: 'cramdb',
-                password: 'SofDelf7#',
+                username: 'delfi',
+                password: 'password',
                 database: 'cram',
                 entities: [usuario_entity_1.Usuario, lugares_entity_1.Lugar, reviews_entity_1.Review, seguido_entity_1.Seguido],
                 synchronize: false,

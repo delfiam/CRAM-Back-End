@@ -15,7 +15,7 @@ const typeorm_1 = require("typeorm");
 let LoginAuthDto = class LoginAuthDto {
 };
 __decorate([
-    (0, typeorm_1.Column)({ name: 'Username', type: 'varchar', length: 20 }),
+    (0, typeorm_1.Column)({ name: 'Username', type: 'varchar', unique: true, length: 20 }),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], LoginAuthDto.prototype, "username", void 0);

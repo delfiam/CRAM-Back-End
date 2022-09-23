@@ -4,7 +4,7 @@ import { Entity, Column } from 'typeorm';
 @Entity()
 export class LoginAuthDto{
 
-    @Column({name: 'Username', type: 'varchar', length: 20})
+    @Column({name: 'Username', type: 'varchar', unique: true, length: 20})
     @IsNotEmpty()
     username: string
     

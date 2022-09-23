@@ -72,6 +72,7 @@ CREATE TABLE IF NOT EXISTS `CRAM`.`Seguido` (
   `IdUsuario` INT NOT NULL,
   PRIMARY KEY (`idSeguido`),
   INDEX `fk_Seguido_Usuario1_idx` (`IdUsuario` ASC) VISIBLE,
+  INDEX `fk_Seguido_Usuario1_idx` (`IdUsuario` ASC) VISIBLE,
   CONSTRAINT `fk_Seguido_Usuario1`
     FOREIGN KEY (`IdUsuario`)
     REFERENCES `CRAM`.`Usuario` (`IdUsuario`)
